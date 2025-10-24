@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/rails
+      - db_data:/rails/storage
+    environment:
+      RAILS_ENV: development
+    command: ./bin/rails server -b 0.0.0.0
+volumes:
+  db_data:
