@@ -1,0 +1,28 @@
+example_id                                  | status | run_time        |
+------------------------------------------- | ------ | --------------- |
+./spec/models/friend_request_spec.rb[1:1]   | passed | 0.11807 seconds |
+./spec/models/friend_request_spec.rb[1:2]   | passed | 0.00141 seconds |
+./spec/models/task_spec.rb[1:1]             | passed | 0.00311 seconds |
+./spec/models/task_spec.rb[1:2]             | passed | 0.00054 seconds |
+./spec/models/task_spec.rb[1:3]             | passed | 0.00051 seconds |
+./spec/models/user_spec.rb[1:1]             | passed | 0.00068 seconds |
+./spec/models/user_spec.rb[1:2]             | passed | 0.00033 seconds |
+./spec/models/user_spec.rb[1:3]             | passed | 0.00032 seconds |
+./spec/models/user_spec.rb[1:4]             | passed | 0.0004 seconds  |
+./spec/requests/users_spec.rb[1:1:1]        | passed | 0.01208 seconds |
+./spec/requests/users_spec.rb[1:2:1]        | passed | 0.00268 seconds |
+./spec/requests/users_spec.rb[1:3:1:1]      | passed | 0.00266 seconds |
+./spec/requests/users_spec.rb[1:3:1:2]      | passed | 0.00253 seconds |
+./spec/requests/users_spec.rb[1:3:2:1]      | passed | 0.00134 seconds |
+./spec/requests/users_spec.rb[1:3:2:2]      | passed | 0.00099 seconds |
+./spec/requests/users_spec.rb[1:4:1:1]      | passed | 0.00302 seconds |
+./spec/requests/users_spec.rb[1:4:1:2]      | passed | 0.00258 seconds |
+./spec/requests/users_spec.rb[1:4:2:1]      | passed | 0.00246 seconds |
+./spec/requests/users_spec.rb[1:5:1]        | passed | 0.0025 seconds  |
+./spec/routing/users_routing_spec.rb[1:1:1] | passed | 0.00031 seconds |
+./spec/routing/users_routing_spec.rb[1:1:2] | passed | 0.00022 seconds |
+./spec/routing/users_routing_spec.rb[1:1:3] | passed | 0.00022 seconds |
+./spec/routing/users_routing_spec.rb[1:1:4] | passed | 0.00022 seconds |
+./spec/routing/users_routing_spec.rb[1:1:5] | passed | 0.00021 seconds |
+./spec/routing/users_routing_spec.rb[1:1:6] | passed | 0.00023 seconds |
+./spec/sample_spec.rb[1:1]                  | passed | 0.00031 seconds |
