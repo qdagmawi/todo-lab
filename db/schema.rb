@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_30_084802) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_23_053423) do
   create_table "friend_requests", force: :cascade do |t|
-    t.integer "status", default: 0, null: false
     t.integer "sender_id", null: false
     t.integer "receiver_id", null: false
+    t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["receiver_id"], name: "index_friend_requests_on_receiver_id"
@@ -22,11 +22,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_30_084802) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string "title", null: false
-    t.string "description"
-    t.date "due_date"
-    t.integer "status", default: 0, null: false
     t.integer "user_id", null: false
+    t.string "title", null: false
+    t.string "description", null: false
+    t.date "due_date", null: false
+    t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_tasks_on_user_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_30_084802) do
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "friend_requests", "users", column: "receiver_id"

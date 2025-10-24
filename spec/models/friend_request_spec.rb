@@ -1,13 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe FriendRequest, type: :model do
-  it "has a valid factory" do
-    friend_request = create(:friend_request)
-    expect(friend_request).to be_valid
-  end
+  it { should belong_to(:sender).class_name('User') }
+  it { should belong_to(:receiver).class_name('User') }
 
-  it "validates status cannot be nil" do
-    friend_request = build(:friend_request, status: nil)
+  it { should validate_presence_of(:status) }
+
+  it "validates cannot request one self" do
+    user = create(:user)
+    friend_request = build(:friend_request, sender: user, receiver: user)
     expect(friend_request).not_to be_valid
+    expect(friend_request.errors[:base]).to include("Cannot request oneself")
   end
 end

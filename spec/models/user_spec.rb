@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   it "has a valid factory" do
-    user = create(:user)
-    expect(user).to be_valid
+    expect(create(:user)).to be_valid
   end
 
   it "validates name cannot be nil" do
@@ -15,8 +14,15 @@ RSpec.describe User, type: :model do
     user = build(:user, email: nil)
     expect(user).not_to be_valid
   end
-  it "validates password_digest cannot be nil" do
-    user = build(:user, password_digest: nil)
+
+  it "validates email is unique" do
+    user = create(:user)
+    user2 = build(:user, email: user.email)
+    expect(user2).not_to be_valid
+  end
+
+  it "validates password cannot be nil" do
+    user = build(:user, password: nil)
     expect(user).not_to be_valid
   end
 end
