@@ -3,7 +3,6 @@ name: CI
 on:
   pull_request:
   push:
-    branches: [main]
 
 jobs:
   scan_ruby:
@@ -50,7 +49,7 @@ jobs:
         run: docker build -t todo-lab .
 
       - name: Run RSpec tests inside container
-        run: docker run todo-l-lab rspec
+        run: docker run --rm todo-lab rspec
 
   push_image:
     runs-on: ubuntu-latest
