@@ -12,4 +12,3 @@ class Task < ApplicationRecord
     completed: 2
   }
 end
-
