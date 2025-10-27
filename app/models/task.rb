@@ -13,8 +13,3 @@ class Task < ApplicationRecord
   }
 end
 
-RSpec.describe "smoke failing test" do
-  it "is intentionally failing" do
-    expect(1).to eq(2)  # failing assertion to exercise CI failure
-  end
-end
