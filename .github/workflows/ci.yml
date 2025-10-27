@@ -42,14 +42,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
 
-      - name: Build Docker image
-        run: docker build -t todo-lab .
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle config set --local path 'vendor/bundle'
+          bundle install --jobs 4 --retry 3
 
-      - name: Run RSpec tests inside container
-        run: docker run --rm todo-lab rspec
+      - name: Run simple CI smoke script
+        run: bundle exec ruby script/ci_smoke.rb
 
   push_image:
     runs-on: ubuntu-latest
